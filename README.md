@@ -18,3 +18,6 @@ On a 2-dimensional four-class problem (250 instances of each class) whose points
 
 The following plot shows how quickly the classifier learns.
 ![](https://raw.githubusercontent.com/AWNystrom/OnlineGaussianNaiveBayes/master/images/accuracy_over_time.png?token=1478067__eyJzY29wZSI6IlJhd0Jsb2I6QVdOeXN0cm9tL09ubGluZUdhdXNzaWFuTmFpdmVCYXllcy9tYXN0ZXIvaW1hZ2VzL2FjY3VyYWN5X292ZXJfdGltZS5wbmciLCJleHBpcmVzIjoxNDA5MTE1MDk1fQ%3D%3D--ed799664b94f11089119b06df039b9fd82bb7977)
+
+
+The final performance test is 10-fold cross valication on 100,000 points (4 balanced classes). The performances across folds are:
