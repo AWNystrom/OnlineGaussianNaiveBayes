@@ -23,6 +23,16 @@ The final performance test is 10-fold cross valication on 100,000 points (4 bala
 
 Which yields a mean of 94.88% and a standard devation of 0.0152236657872.
 
+##Example Usage
+>>> from online_gaussian_naive_bayes import OnlineGaussianNaiveBayes
+>>> X = np.array([[-1, -1], [-2, -1], [-3, -2], [1, 1], [2, 1], [3, 2]])
+>>> Y = np.array([1, 1, 1, 2, 2, 2])
+>>> clf = OnlineGaussianNaiveBayes(2)
+>>> for i in xrange(len(X)):
+>>>   clf.fit(X[i], Y[i])
+>>> print(clf.predict([[-0.8, -1]]))
+1
+
 ##Synthetic Data Generation
 ```python
 from random import normalvariate, shuffle
