@@ -20,18 +20,19 @@ The following plot shows how quickly the classifier learns.
 
 
 The final performance test is 10-fold cross valication on 100,000 points (4 balanced classes). The performances across folds are:
-0.999
-0.999
-0.999
-0.999
-1.0
-1.0
-0.998
-0.998
-1.0
-0.918
 
-Which yields a mean of 99.1% and a standard devation across folds of 0.0243433769227.
+0.962
+0.957
+0.946
+0.941
+0.97
+0.952
+0.948
+0.958
+0.943
+0.911
+
+Which yields a mean of 94.88% and a standard devation across folds of 0.0152236657872.
 
 ##Synthetic Data Generation
 ```python
