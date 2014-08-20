@@ -86,7 +86,7 @@ class OnlineGaussianNaiveBayes(object):
 	
 	def predict(self, x):
 		"""
-		Perform inference according the Gaussian Naive Bayes.
+		Perform Gaussian Naive Bayes inference.
 		
 		Parameters
 		----------
