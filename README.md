@@ -19,20 +19,9 @@ The following plot shows how quickly the classifier learns.
 ![](https://raw.githubusercontent.com/AWNystrom/OnlineGaussianNaiveBayes/master/images/accuracy_over_time.png?token=1478067__eyJzY29wZSI6IlJhd0Jsb2I6QVdOeXN0cm9tL09ubGluZUdhdXNzaWFuTmFpdmVCYXllcy9tYXN0ZXIvaW1hZ2VzL2FjY3VyYWN5X292ZXJfdGltZS5wbmciLCJleHBpcmVzIjoxNDA5MTE2NTc2fQ%3D%3D--4082d35979b7c304530774219e91c5dc275869c0)
 
 
-The final performance test is 10-fold cross valication on 100,000 points (4 balanced classes). The performances across folds are:
+The final performance test is 10-fold cross valication on 100,000 points (4 balanced classes). The performances across folds are: 0.962, 0.957, 0.946, 0.941, 0.97, 0.952, 0.948, 0.958, 0.943, 0.911
 
-0.962
-0.957
-0.946
-0.941
-0.97
-0.952
-0.948
-0.958
-0.943
-0.911
-
-Which yields a mean of 94.88% and a standard devation across folds of 0.0152236657872.
+Which yields a mean of 94.88% and a standard devation of 0.0152236657872.
 
 ##Synthetic Data Generation
 ```python
