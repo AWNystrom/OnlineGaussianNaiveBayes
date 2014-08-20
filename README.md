@@ -10,3 +10,6 @@ http://en.wikipedia.org/wiki/Algorithms_for_calculating_variance#Incremental_alg
 
 Time & Space Performance
 Only a single instance is stored in RAM at a time. Means and variances for each dimension are also stored. The runtime complexity of training is O(N*D*C) where N is the number of instances, D is the dimensionality, and C is the number of classes. 1,000,000 2-dimensional instances took 25 seconds to train on my 3 year-old Macbook Pro.
+
+
+opts_knit$set(base.url='https://avatars0.githubusercontent.com/u/46173?v=2&s=60')
