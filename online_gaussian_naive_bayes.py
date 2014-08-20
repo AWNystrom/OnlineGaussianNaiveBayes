@@ -1,3 +1,5 @@
+#Written by Andrew Nystrom, AWNystrom@gmail.com, 2014-08-20
+
 from collections import defaultdict
 from math import log, e, pi
 import numpy as np
