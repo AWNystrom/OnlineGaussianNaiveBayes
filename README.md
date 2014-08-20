@@ -38,10 +38,10 @@ Only a single instance is stored in RAM at a time. Means and variances for each 
 ```python
 from random import normalvariate, shuffle
 from numpy import array
-mean_std_pairs_triples = [((2,5), (10, 50), 2500, 'a'), 
-			  ((200, 300), (20, 30), 2500, 'b'),
-			  ((150, -100), (10, 20), 2500, 'c'),
-			  ((50, 500), (40, 10), 2500, 'd')]
+mean_std_pairs_triples = 	[((2,5), (10, 50), 2500, 'a'), 
+				((200, 300), (20, 30), 2500, 'b'),
+				((150, -100), (10, 20), 2500, 'c'),
+				((50, 500), (40, 10), 2500, 'd')]
 points = []
 classes = []
 class_num = 0
