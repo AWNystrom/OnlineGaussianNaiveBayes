@@ -25,6 +25,7 @@ Which yields a mean of 94.88% and a standard devation of 0.0152236657872.
 
 ##Example Usage
 ```
+>>> import numpy as np
 >>> from online_gaussian_naive_bayes import OnlineGaussianNaiveBayes
 >>> X = np.array([[-1, -1], [-2, -1], [-3, -2], [1, 1], [2, 1], [3, 2]])
 >>> Y = np.array([1, 1, 1, 2, 2, 2])
