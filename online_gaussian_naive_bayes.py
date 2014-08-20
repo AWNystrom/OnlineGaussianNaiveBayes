@@ -1,4 +1,4 @@
-#Written by Andrew Nystrom, AWNystrom@gmail.com, 2014-08-20
+#Written by Andrew Nystrom, AWNystrom@gmail.com, 2014-08-19
 
 from collections import defaultdict
 from math import log, e, pi
