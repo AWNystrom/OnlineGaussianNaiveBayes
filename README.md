@@ -16,3 +16,5 @@ Performance
 On a 2-dimensional four-class problem (250 instances of each class) whose points are shown in the following plot, the classifier achieved an accuracy of about 89.6%. Note that these classifications were done online; the classifier was shown 4 instances before predictions began. After that, inference was performed on a new instance, then the classifier trained on the new point. The colors of the points indicate the classifier's guess. Note that colors are well clustered, which is due to the high accuracy.
 ![](https://raw.githubusercontent.com/AWNystrom/OnlineGaussianNaiveBayes/master/images/class_plots.png?token=1478067__eyJzY29wZSI6IlJhd0Jsb2I6QVdOeXN0cm9tL09ubGluZUdhdXNzaWFuTmFpdmVCYXllcy9tYXN0ZXIvaW1hZ2VzL2NsYXNzX3Bsb3RzLnBuZyIsImV4cGlyZXMiOjE0MDkxMTQ0NDJ9--b26f04bbff03693f3517b6b5f042b01030eeca2d)
 
+The following plot shows how quickly the classifier learns.
+![]()
