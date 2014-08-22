@@ -90,7 +90,7 @@ class OnlineGaussianNaiveBayes(object):
 		
 		Parameters
 		----------
-		x : a vector representing the instance to be trained on.
+		x : a vector representing the instance whose class is to be predicted.
 		"""
 	
 		#Seen one or no points? Don't even try (no variances calculated).
