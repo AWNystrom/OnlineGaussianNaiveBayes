@@ -27,12 +27,12 @@ class OnlineGaussianNaiveBayes(object):
 		--------
 		>>> from online_gaussian_naive_bayes import OnlineGaussianNaiveBayes
 		>>> X = np.array([[-1, -1], [-2, -1], [-3, -2], [1, 1], [2, 1], [3, 2]])
-    >>> Y = np.array([1, 1, 1, 2, 2, 2])
-    >>> clf = OnlineGaussianNaiveBayes(2)
-    >>> for i in xrange(len(X)):
-    >>>   clf.fit(X[i], Y[i])
-    >>> print(clf.predict([[-0.8, -1]]))
-    1
+    		>>> Y = np.array([1, 1, 1, 2, 2, 2])
+    		>>> clf = OnlineGaussianNaiveBayes(2)
+    		>>> for i in xrange(len(X)):
+    		>>>   clf.fit(X[i], Y[i])
+    		>>> print(clf.predict([[-0.8, -1]]))
+    		1
 		"""
 		
 		
@@ -40,12 +40,9 @@ class OnlineGaussianNaiveBayes(object):
 		assert self.D_ > 0
 		self.priors_ = priors
 		self.n_ = defaultdict(lambda: np.int64(0))
-		self.mean_ = defaultdict(lambda: np.ndarray(D, dtype=np.float, 
-																								buffer=np.zeros(D)))
-		self.M2_ = defaultdict(lambda: np.ndarray(D, dtype=np.float, 
-																							buffer=np.zeros(D)))
-		self.var_ = defaultdict(lambda: np.ndarray(D, dtype=np.float, 
-																							buffer=np.zeros(D)))
+		self.mean_ = defaultdict(lambda: np.ndarray(D, dtype=np.float, buffer=np.zeros(D)))
+		self.M2_ = defaultdict(lambda: np.ndarray(D, dtype=np.float, buffer=np.zeros(D)))
+		self.var_ = defaultdict(lambda: np.ndarray(D, dtype=np.float, buffer=np.zeros(D)))
 		self.total_ = np.int64(0)
 		self.min_var_ = np.inf
 	
@@ -82,7 +79,7 @@ class OnlineGaussianNaiveBayes(object):
 		#Don't divide by zero, but don't use too much smoothing. 100th of
 		#the least variance seen.
 		v += self.min_var_ / 100
-		return -(x-m)**2 * log(e) / (2*v) - 0.5*log(2*pi*v)
+		return -(x-m)**2 * log(e) / (2*pi*v) - 0.5*log(2*pi*v)
 	
 	def predict(self, x):
 		"""
@@ -99,12 +96,10 @@ class OnlineGaussianNaiveBayes(object):
 			
 		best_score_class_pair = (-np.inf, None)
 		for c in self.mean_:
-			score = sum((self._pdf(x[i], self.mean_[c][i], self.var_[c][i]) \
-									 for i in xrange(self.D_)))
+			score = sum((self._pdf(x[i], self.mean_[c][i], self.var_[c][i]) for i in xrange(self.D_)))
 									 
 			if self.priors_:
 				score += log(self.n_[c]) - log(self.total_)
-			best_score_class_pair = max(best_score_class_pair, (score, c), 
-																	key=lambda item: item[0])
+			best_score_class_pair = max(best_score_class_pair, (score, c), key=lambda item: item[0])
 		
 		return best_score_class_pair[1]
