@@ -64,7 +64,7 @@ class OnlineGaussianNaiveBayes(object):
 		for i in xrange(self.D_):
 			delta = x[i] - self.mean_[c][i]
 			self.mean_[c][i] += delta / n
-			self.M2_[c][i] = delta*(x[i] - self.mean_[c][i])
+			self.M2_[c][i] += delta*(x[i] - self.mean_[c][i])
 			
 			if n < 2:
 				self.var_[c][i] = np.float(0)
