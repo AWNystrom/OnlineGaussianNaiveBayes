@@ -39,10 +39,10 @@ class OnlineGaussianNaiveBayes(object):
 		self.D_ = np.int32(D)
 		assert self.D_ > 0
 		self.priors_ = priors
-		self.n_ = defaultdict(lambda: np.int64(0))
-		self.mean_ = defaultdict(lambda: np.ndarray(D, dtype=np.float, buffer=np.zeros(D)))
-		self.M2_ = defaultdict(lambda: np.ndarray(D, dtype=np.float, buffer=np.zeros(D)))
-		self.var_ = defaultdict(lambda: np.ndarray(D, dtype=np.float, buffer=np.zeros(D)))
+		self.n_ = {}
+		self.mean_ = {}
+		self.M2_ = {}
+		self.var_ = {}
 		self.total_ = np.int64(0)
 		self.min_var_ = np.inf
 	
@@ -59,6 +59,16 @@ class OnlineGaussianNaiveBayes(object):
 		
 		assert len(x) == self.D_
 		self.total_ += 1
+		
+		#IF we've not, initialize data for this class
+		if c not in self.n_:
+			self.n_[c] = np.int64(0)
+			D = self.D_
+			self.mean_[c] = np.ndarray(D, dtype=np.float, buffer=np.zeros(D))
+			self.M2_[c] = np.ndarray(D, dtype=np.float, buffer=np.zeros(D))
+			self.var_[c] = np.ndarray(D, dtype=np.float, buffer=np.zeros(D))
+		
+		
 		self.n_[c] += 1
 		n = self.n_[c]
 		for i in xrange(self.D_):
